@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #9f1f10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="411.0" layoutY="14.0" prefHeight="42.0" prefWidth="391.0" text="Stanje kartela" textFill="#fff341" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="Bookman Old Style Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="53.0" layoutY="66.0" prefHeight="42.0" prefWidth="300.0" text="Plantaže" textFill="#fff341">
+         <font>
+            <Font name="Bookman Old Style Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="854.0" layoutY="66.0" prefHeight="42.0" prefWidth="300.0" text="Denar" textFill="#fff341">
+         <font>
+            <Font name="Bookman Old Style Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <TableView fx:id="plantaze" layoutX="48.0" layoutY="130.0" prefHeight="403.0" prefWidth="310.0" style="-fx-border-color: black;">
+        <columns>
+          <TableColumn fx:id="IDPlantaze" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="vrstaPlantaze" prefWidth="93.0" text="Vrsta" />
+            <TableColumn fx:id="letniPlantaze" minWidth="-1.0" prefWidth="95.0" text="Letni dobiček" />
+            <TableColumn fx:id="lokacijaPlantaze" minWidth="-1.0" prefWidth="86.0" text="Lokacija" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tabelaDenar" layoutX="849.0" layoutY="130.0" prefHeight="612.0" prefWidth="316.0" style="-fx-border-color: black;">
+         <columns>
+            <TableColumn fx:id="IDDenar" prefWidth="28.0" text="ID" />
+            <TableColumn fx:id="Naslov" prefWidth="93.0" text="Naslov" />
+            <TableColumn fx:id="SteviloDenarja" minWidth="-1.0" prefWidth="99.0" text="Stevilo denarja" />
+            <TableColumn fx:id="DatumDostave" minWidth="-1.0" prefWidth="94.0" text="Datum dostave" />
+         </columns>
+      </TableView>
+      <ButtonBar layoutX="48.0" layoutY="746.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="310.0" />
+      <TabPane layoutX="403.0" layoutY="130.0" prefHeight="403.0" prefWidth="400.0" style="-fx-border-color: black;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Gangitos">
+               <content>
+                  <TableView fx:id="tabelaGangitos" prefHeight="354.0" prefWidth="400.0">
+                    <columns>
+                      <TableColumn fx:id="IDGangitos" prefWidth="37.0" text="ID" />
+                      <TableColumn fx:id="Ime" prefWidth="114.0" text="Ime" />
+                        <TableColumn fx:id="Priimek" prefWidth="117.0" text="Priimek" />
+                        <TableColumn fx:id="Regija" prefWidth="132.0" text="Regija" />
+                    </columns>
+                  </TableView>
+               </content>
+          </Tab>
+            <Tab text="Sovražniki">
+               <content>
+                  <TableView fx:id="tabelaSovrazniki" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="IDSovrazniki" prefWidth="39.0" text="ID" />
+                      <TableColumn fx:id="ImeSovrazniki" prefWidth="78.0" text="Ime" />
+                        <TableColumn fx:id="PriimekSovrazniki" prefWidth="129.0" text="Priimek" />
+                        <TableColumn fx:id="Prebivalisce" prefWidth="154.0" text="Prebivališče" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+            <Tab text="Delo">
+               <content>
+                  <TableView fx:id="tabelaDelo" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="IDDelo" prefWidth="149.0" text="ID" />
+                      <TableColumn fx:id="VrstaDela" prefWidth="251.0" text="Vrsta" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+          <Tab text="GangitosDelo">
+               <content>
+                  <TableView fx:id="tabelaGangitosDelo" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="IDGangitos1" prefWidth="200.0" text="IDGangitos" />
+                      <TableColumn fx:id="IDDelo1" prefWidth="200.0" text="IDDelo" />
+                    </columns>
+                  </TableView>
+               </content>
+          </Tab>
+            <Tab text="GangitosSovražniki">
+               <content>
+                  <TableView fx:id="tabelaGangitosSovrazniki" prefHeight="429.0" prefWidth="400.0">
+                    <columns>
+                      <TableColumn fx:id="IDGangitos2" prefWidth="200.0" text="IDGangitos" />
+                      <TableColumn fx:id="IDSovrazniki2" prefWidth="200.0" text="IDSovražnik" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label alignment="CENTER" layoutX="406.0" layoutY="66.0" prefHeight="42.0" prefWidth="400.0" text="Člani, delo in sovražniki">
+         <font>
+            <Font name="Bookman Old Style Bold" size="28.0" />
+         </font>
+      </Label>
+    <Button fx:id="osvezi" layoutX="921.0" layoutY="792.0" mnemonicParsing="false" onAction="#nastaviStanjeVtabelah" prefHeight="42.0" prefWidth="167.0" text="Osveži stanje tabel">
+         <font>
+            <Font name="Bookman Old Style Bold" size="14.0" />
+         </font>
+      </Button>
+      <TabPane layoutX="48.0" layoutY="549.0" prefHeight="316.0" prefWidth="756.0" style="-fx-border-color: #000000;">
+         <tabs>
+            <Tab text="Dodaj">
+               <content>
+                  <TabPane prefHeight="285.0" prefWidth="755.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Gangitosa">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="614.0">
+                                 <children>
+                                    <Button fx:id="dodajGangitosaGumb" layoutX="330.0" layoutY="185.0" mnemonicParsing="false" onAction="#dodajGangitosa" prefHeight="25.0" prefWidth="96.0" text="Dodaj">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="ImeGangitosaText" layoutX="126.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="181.0" layoutY="45.0" prefHeight="17.0" prefWidth="39.0" text="Ime" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="PriimekGangitosText" layoutX="303.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="325.0" layoutY="45.0" prefHeight="24.0" prefWidth="106.0" text="Priimek" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="RegijaGangitosText" layoutX="478.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="500.0" layoutY="45.0" prefHeight="24.0" prefWidth="106.0" text="Regija" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                      <Tab text="Sovražnika">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="dodajSovraznikaGumb" layoutX="330.0" layoutY="185.0" mnemonicParsing="false" onAction="#dodajSovraznika" prefHeight="25.0" prefWidth="96.0" text="Dodaj">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="ImeSovraznikaText" layoutX="119.0" layoutY="102.0" />
+                                    <TextField fx:id="PriimekSovraznikaText" layoutX="304.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="174.0" layoutY="45.0" prefHeight="17.0" prefWidth="39.0" text="Ime" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="325.0" layoutY="45.0" prefHeight="24.0" prefWidth="106.0" text="Priimek" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="PrebivalisceText" layoutX="494.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="500.0" layoutY="45.0" prefHeight="24.0" prefWidth="136.0" text="Prebivališče" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Plantažo">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="614.0">
+                                 <children>
+                                    <Button fx:id="dodajNovoPlantazoGumb" layoutX="330.0" layoutY="185.0" mnemonicParsing="false" onAction="#dodajNovoPlantazo" prefHeight="25.0" prefWidth="96.0" text="Dodaj">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="VrstaPoljaText" layoutX="126.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="167.0" layoutY="45.0" prefHeight="24.0" prefWidth="67.0" text="Vrsta" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="LetniDobicekPoljaText" layoutX="303.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="301.0" layoutY="45.0" prefHeight="24.0" prefWidth="152.0" text="Letni dobiček" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="LokacijaPoljaText" layoutX="478.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="500.0" layoutY="45.0" prefHeight="24.0" prefWidth="106.0" text="Lokacija" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Lokacijo denarja">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="614.0">
+                                 <children>
+                                    <Button fx:id="dodajNovoLokacijoDenarjaGumb" layoutX="330.0" layoutY="185.0" mnemonicParsing="false" onAction="#dodajNovoLokacijoDenarja" prefHeight="25.0" prefWidth="96.0" text="Dodaj">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="NaslovText" layoutX="112.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="126.0" layoutY="45.0" prefHeight="24.0" prefWidth="120.0" text="Naslov" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="KolicinaText" layoutX="303.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="301.0" layoutY="45.0" prefHeight="24.0" prefWidth="152.0" text="Količina" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="DatumDostaveText" layoutX="493.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="479.0" layoutY="45.0" prefHeight="24.0" prefWidth="178.0" text="Datum dostave" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Dodeli novo vrsto dela">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="dodeliNovoVrstoDelaGumb" layoutX="330.0" layoutY="185.0" mnemonicParsing="false" onAction="#dodeliNovoNalogo" prefHeight="25.0" prefWidth="96.0" text="Dodaj">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="IDGangitosaDelo" layoutX="211.0" layoutY="102.0" />
+                                    <TextField fx:id="IDDeloGangitos" layoutX="396.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="213.0" layoutY="45.0" prefHeight="24.0" prefWidth="148.0" text="ID Gangitosa" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="417.0" layoutY="45.0" prefHeight="24.0" prefWidth="106.0" text="ID Dela" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Dodeli sovražnika">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="dodeliSovraznikaGumb" layoutX="330.0" layoutY="185.0" mnemonicParsing="false" onAction="#dodeliSovraznika" prefHeight="25.0" prefWidth="96.0" text="Dodaj">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="IDGangitosaSovraznikiText" layoutX="211.0" layoutY="102.0" />
+                                    <TextField fx:id="IDSovraznikaGangitosText" layoutX="396.0" layoutY="102.0" />
+                                    <Label alignment="CENTER" layoutX="213.0" layoutY="45.0" prefHeight="24.0" prefWidth="148.0" text="ID Gangitosa" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="396.0" layoutY="45.0" prefHeight="24.0" prefWidth="153.0" text="ID Sovražnika" textFill="#fff341">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </content>
+            </Tab>
+            <Tab text="Odstrani">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="286.0" prefWidth="756.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Gangitosa">
+                              <content>
+                                <AnchorPane prefHeight="256.0" prefWidth="586.0">
+                                       <children>
+                                          <Button fx:id="odstraniGangitosaGumb" layoutX="314.0" layoutY="144.0" mnemonicParsing="false" onAction="#odstraniGangitosa" prefHeight="25.0" prefWidth="96.0" text="Odstrani">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="IDGangitosaOdstraniText" layoutX="288.0" layoutY="93.0" />
+                                          <Label alignment="CENTER" layoutX="288.0" layoutY="49.0" prefHeight="24.0" prefWidth="148.0" text="ID Gangitosa" textFill="#fff341">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Sovražnika">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="odstraniSovraznikaGumb" layoutX="314.0" layoutY="144.0" mnemonicParsing="false" onAction="#odstraniSovraznika" prefHeight="25.0" prefWidth="96.0" text="Odstrani">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="IDSovraznikaOdstraniText" layoutX="288.0" layoutY="93.0" />
+                                          <Label alignment="CENTER" layoutX="284.0" layoutY="49.0" prefHeight="24.0" prefWidth="155.0" text="ID Sovražnika" textFill="#fff341">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Plantažo">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="odstraniPlantazoGumb" layoutX="314.0" layoutY="144.0" mnemonicParsing="false" onAction="#odstraniPlantazo" prefHeight="25.0" prefWidth="96.0" text="Odstrani">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="IDPlantazeOdstraniText" layoutX="288.0" layoutY="93.0" />
+                                          <Label alignment="CENTER" layoutX="284.0" layoutY="49.0" prefHeight="24.0" prefWidth="155.0" text="ID Plantaže" textFill="#fff341">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Lokacijo denarja">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="odstraniLokacijoDenarjaGumb" layoutX="314.0" layoutY="144.0" mnemonicParsing="false" onAction="#odstraniLokacijoDenarja" prefHeight="25.0" prefWidth="96.0" text="Odstrani">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="IDLokacijeDenarjaOdstraniText" layoutX="288.0" layoutY="93.0" />
+                                          <Label alignment="CENTER" layoutX="258.0" layoutY="50.0" prefHeight="24.0" prefWidth="208.0" text="ID Lokacije denarja" textFill="#fff341">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Razno">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="285.0" prefWidth="756.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Količina določenih polj">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="196.0" layoutY="31.0" text="Vnesite polje, ki  vas zanima" textFill="#fff341">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="IDPoljaRaznoText" layoutX="251.0" layoutY="101.0" prefHeight="26.0" prefWidth="253.0" />
+                                          <Button fx:id="prestejPolja" layoutX="330.0" layoutY="160.0" mnemonicParsing="false" onAction="#funkcijaPrestejPolja" prefHeight="25.0" prefWidth="96.0" text="Poglej">
+                                             <font>
+                                                <Font name="Bookman Old Style Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Nadpovprečne število denarja na lokacijah">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tabelaNadPovprecnegaDenarja" prefHeight="254.0" prefWidth="756.0">
+                                            <columns>
+                                              <TableColumn fx:id="IDDenar1" prefWidth="75.0" text="ID" />
+                                              <TableColumn fx:id="Naslov1" prefWidth="352.0000457763672" text="Naslov" />
+                                                <TableColumn fx:id="SteviloDenarja1" prefWidth="141.60000610351562" text="Stevilo denarja" />
+                                                <TableColumn fx:id="DatumDostave1" prefWidth="184.7999267578125" text="Datum dostave" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
